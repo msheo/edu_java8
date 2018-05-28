@@ -1,0 +1,16 @@
+기존의 명령형 방식의 코딩이 아니라.
+람다와 스트림을 사용하여
+"서술형" 방식의 코딩을 한다!!
+
+	private static List<Exam05_EmployeeVO> employees = Arrays.asList(
+			new Exam05_EmployeeVO("1", "홍길동1", "IT", 1000, "female"),
+			new Exam05_EmployeeVO("2", "홍길동2", "c", 2000, "female"),
+			new Exam05_EmployeeVO("3", "홍길동3", "IT", 3000, "male"),
+			new Exam05_EmployeeVO("4", "홍길동4", "b", 4000, "female"),
+			new Exam05_EmployeeVO("5", "홍길동5", "IT", 5000, "female"),
+			new Exam05_EmployeeVO("6", "홍길동6", "a", 6000, "female"),
+			new Exam05_EmployeeVO("7", "홍길동7", "IT", 7000, "male")
+		);
+
+
+double avg = employees.stream().filter(t -> t.getGender().equals("female")).filter(t -> t.getDept().equals("IT")).mapToInt(t -> t.getSalary()).average().getAsDouble();
