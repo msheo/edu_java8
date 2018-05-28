@@ -1,0 +1,89 @@
+package nio;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousFileChannel;
+import java.nio.channels.CompletionHandler;
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.EnumSet;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Exam08_AsynchronousFileChannelWrite {
+
+	public static void main(String[] args) {
+		
+		// 현재 가용 Core 수를 알아보자.
+		int coreNum = Runtime.getRuntime().availableProcessors();
+		System.out.println(coreNum);
+		
+		// 1. Thread Pool부터 만들자. -> 스레드 필요할때 NEW 해서 만드는 것은 굉장히 지양해야함. Thread Pool 에서 꺼내서 쓸 것!
+		ExecutorService executorService = Executors.newFixedThreadPool(coreNum);
+		
+		for (int i = 0; i < 10; i++) {
+			// 2. 파일 경로를 생성
+			Path path = Paths.get("asset/file" + i + ".txt");
+			Charset charset = Charset.forName("UTF-8");
+			
+			try {
+				AsynchronousFileChannel asyncFileChannel = 
+						AsynchronousFileChannel.open(path, EnumSet.of(StandardOpenOption.CREATE, StandardOpenOption.WRITE), executorService);
+				
+				ByteBuffer buffer = charset.encode("이것은 소리없는 아우성 : " + i);
+				
+				// 원래 여기서 asyncFileChannel.write(buffer) 하면 되는데..
+				
+				// 스레드풀로 돌리면 마지막에 다 파일처리한 뒤에 filechannel.close() 해줘야 하는데 스레드라서 이게언제끝날지 모르자나.. 
+				// 동기통신에서는 위에서 기다렸다가 해서 close하면 되는데.. 쓰레드로인한 병렬처리는?? 어떻게하지??
+				
+				// inner Class 로 만든 이유는 위의 asyncFileChannel와 path를 이용해야해서! 클래스 밖으로 빼서 만들어도 되지만  asyncFileChannel 사용하려면 인자넘기고 별짓다해야함
+				class Attachment{
+					AsynchronousFileChannel asyncFileChannel;
+					Path path;
+				}
+				// 3. 결론부터 말하면 나중에 callback method에 전달될 인자 객체
+				Attachment attachment = new Attachment();
+				attachment.asyncFileChannel = asyncFileChannel;
+				attachment.path = path;
+				
+				// 4. 나중에 사용될 callback method를 가지고 있는 Event 객체 생성
+				CompletionHandler<Integer, Attachment> handler = new CompletionHandler<Integer, Attachment>() {
+
+					@Override
+					public void completed(Integer result, Attachment attachment) {
+						// 작업이 다 끝나면 자동으로 호출
+						System.out.println("작업파일명 : " + attachment.path.getFileName() +
+										   " : " + Thread.currentThread().getName());
+						
+						attachment.asyncFileChannel.close();
+						
+					}
+
+					@Override
+					public void failed(Throwable exc, Attachment attachment) {
+						// 작업 중 에러가 발생하면 호출
+						System.out.println("먼가 이상해요");
+					}
+					
+				};
+				
+				// 0 : buffer의 시작위치
+				// 객체1 : 나중에 객체2가 가지고 있는 method가 호출되는데 이때 전달되는 객체
+				// 객체2 : 이벤트 객체로 만약 파일처리가 정상처리되면 이 객체안의 특정 method가 호출, 만약 정상처리가 안되면 또 다른 특정 method 호출
+				// asyncFileChannel.write(buffer, 0, "객체1", "객체2");
+				asyncFileChannel.write(buffer, 0, "객체1", "객체2");
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
+		
+	}
+	
+}

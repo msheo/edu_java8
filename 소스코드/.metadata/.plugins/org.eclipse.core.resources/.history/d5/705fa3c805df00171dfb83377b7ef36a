@@ -1,0 +1,10 @@
+package simplebooksearch.vo;
+
+public class BookEntity {
+
+	private String bisbn;
+	private String btitle;
+	private String bauthor;
+	private int bprice;
+	private String bdate;
+}

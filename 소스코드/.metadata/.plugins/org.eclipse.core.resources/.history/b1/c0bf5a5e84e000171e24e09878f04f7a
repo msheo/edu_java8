@@ -1,0 +1,13 @@
+package lambda;
+
+import java.util.Arrays;
+
+public class Exam04_LambdaUsingSupplierAPI {
+	
+	public static void main(String[] args) {
+		
+		List<String> = Arrays.asList("홍길동", "이순신", "강감찬", "신사임당", "유관순");
+		
+	}
+	
+}

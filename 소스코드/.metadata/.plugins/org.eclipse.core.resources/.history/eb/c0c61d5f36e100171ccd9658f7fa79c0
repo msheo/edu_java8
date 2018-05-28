@@ -1,0 +1,45 @@
+package nio;
+
+import java.nio.file.WatchService;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+public class Exam03_WatchService extends Application{
+
+	private TextArea textArea;
+	WatchService watchServie;
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// 화면 layout 구성
+		BorderPane root = new BorderPane();
+		root.setPrefSize(700, 500);
+		
+		textArea = new TextArea();
+		textArea.setEditable(false);
+		
+		root.setCenter(textArea);
+		
+		Scene scene = new Scene(root); // layout을 scene으로
+		
+		primaryStage.setTitle("파일 변경 감시 시스템");	
+		primaryStage.setScene(scene);	// 윈도우에 화면을 붙인다
+		primaryStage.setOnCloseRequest(e -> {
+			System.exit(1);	// 강제 종료
+		});
+		primaryStage.show();
+		
+		new Thread( () -> {} ).start();
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		launch();	
+	}
+
+}

@@ -1,0 +1,11 @@
+package lambda;
+
+public class LambdaBasic {
+	
+	public static void main(String[] args) {
+		
+		// Runnable interface를 구현한 객체를 만들어서 Thread를 동작시킬 것
+		
+	}
+	
+}

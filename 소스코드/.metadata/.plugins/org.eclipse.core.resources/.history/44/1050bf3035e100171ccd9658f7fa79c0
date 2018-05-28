@@ -1,0 +1,39 @@
+package nio;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+public class Exam03_WatchService extends Application{
+
+	private TextArea textArea;
+	
+	
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// 화면 layout 구성
+		BorderPane root = new BorderPane();
+		root.setPrefSize(700, 500);
+		
+		textArea = new TextArea();
+		textArea.setEditable(false);
+		
+		root.setCenter(textArea);
+		
+		Scene scene = new Scene(root);
+		
+		primaryStage.setTitle("파일 변경 감시 시스템");
+		primaryStage.setScene(scene);
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		launch();	
+	}
+
+}

@@ -1,0 +1,16 @@
+package oop.basic;
+
+class SuperClass{
+	
+}
+
+public class Exam02_ISARelationShip {
+
+	public static void main(String[] args) {
+		
+	
+		
+		
+	}
+
+}

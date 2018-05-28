@@ -1,0 +1,19 @@
+package starcraft.terran;
+
+public class Medic implements TerranInterface{
+
+	@Override
+	public void move() {
+		
+	}
+
+	@Override
+	public void attack() {
+		heal();
+	}
+	
+	private void heal() {
+		System.out.println("치료를 해요");
+	}
+	
+}

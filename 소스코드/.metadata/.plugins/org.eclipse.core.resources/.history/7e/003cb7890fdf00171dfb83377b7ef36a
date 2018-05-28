@@ -1,0 +1,29 @@
+package simplebooksearch.dao;
+
+import java.net.ConnectException;
+import java.sql.DriverManager;
+import java.util.List;
+
+import simplebooksearch.vo.BookEntity;
+
+public class BookDao {
+
+	public List<BookEntity> select(String text) {
+		// 순수 JDBC를 이용해서 Mysql에서 데이터 가져옴
+		// DB 처리 코드
+		try {
+			// 1.Mysql JDBC Driver Loading
+			Class.forName("com.jdbc.mysql.Driver");
+			System.out.println("성공");
+			
+			// 2. Database연결
+			String url = "jdbc:mysql://localhost:3306/library";
+			Connection con = DriverManager.getConnection(url, "java", "java");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

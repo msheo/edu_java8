@@ -1,0 +1,7 @@
+package oop.basic;
+
+public class Exam01_InheritanceOrder {
+	public static void main(String[] args) {
+		
+	}
+}

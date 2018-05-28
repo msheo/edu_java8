@@ -1,0 +1,28 @@
+package simplebooksearch;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+/*
+ * 프로그램의 Entry point이고 우리는 View를 이 class를 사용하여 처리할 것
+ * JavaFx 이용을 위하여 e(fx)clipse 를 플로그인 -> package import를 쉽게 처리하기 위하여
+ * Application은 abstract class이다. 따라서 abstract method를 재정의 해야한다.
+ * 
+ */
+
+public class Main extends Application{
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public static void main(String[] args) {
+		//프로그램이 시작되면 launch()라는 static method를 호출해서 Application 실행.
+		launch();
+	}
+	
+}

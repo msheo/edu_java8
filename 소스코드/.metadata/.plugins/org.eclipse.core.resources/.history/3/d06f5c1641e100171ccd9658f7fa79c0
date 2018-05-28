@@ -1,0 +1,29 @@
+package nio;
+
+import java.nio.ByteBuffer;
+
+public class Exam04_ByteBufferCreate {
+
+	public static void main(String[] args) {
+		
+		int capacity = 5*1024*1024;		// 5MB 버퍼 크기
+		
+		long start, end; 	// non-direct vs direct 속도 비교를 위한 시작/끝 시간
+		long start2, end2;
+		
+		start = System.nanoTime();
+		
+		// ByteBuffer를 생성하자. (non-direct방식: JVM이 관리하는 Heap 영역에 버퍼생성, 빠른생성이 가능 but 입출력 처리는 느리다 why? OS kernel 임시 버퍼를 생성/삭제 반복하게되니까)
+		ByteBuffer buffer = ByteBuffer.allocate(capacity);
+		end = System.nanoTime();
+		System.out.println("버퍼생성에 걸린 시간 : " + (end - start));
+		
+		start2 = System.nanoTime();
+		
+		ByteBuffer buffer2 = ByteBuffer.allocate(capacity);
+		end2 = System.nanoTime();
+		System.out.println("버퍼생성에 걸린 시간 : " + (end2 - start2));
+		
+	}
+
+}

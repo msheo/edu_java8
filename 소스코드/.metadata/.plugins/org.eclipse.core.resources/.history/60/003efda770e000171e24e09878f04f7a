@@ -1,0 +1,9 @@
+package lambda;
+
+public class Exam03_LambdaUsingConsumerAPI {
+
+	public static void main(String[] args) {
+
+	}
+
+}

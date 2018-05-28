@@ -1,0 +1,23 @@
+package lambda;
+
+@FunctionalInterface
+interface Exam02_MyFunctionalInterface{
+	public void myInfo();
+}
+
+class OuterClass {
+	private int outerField = 100;
+	
+	class InterClass {
+		private int innerField = 200;
+	}
+	
+}
+
+public class Exam02_LambdaUsingVariable {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}

@@ -1,0 +1,58 @@
+package stream;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
+import lambda.Exam05_EmployeeVO;
+
+public class Exam02_StreamMethod {
+	
+	private static List<Exam05_EmployeeVO> employees = Arrays.asList(
+			new Exam05_EmployeeVO("1", "홍길동1", "IT", 1000, "female"),
+			new Exam05_EmployeeVO("2", "홍길동2", "c", 2000, "female"),
+			new Exam05_EmployeeVO("3", "홍길동3", "IT", 3000, "male"),
+			new Exam05_EmployeeVO("4", "홍길동4", "b", 4000, "female"),
+			new Exam05_EmployeeVO("5", "홍길동5", "IT", 5000, "female"),
+			new Exam05_EmployeeVO("6", "홍길동6", "a", 6000, "female"),
+			new Exam05_EmployeeVO("7", "홍길동7", "IT", 7000, "male"),
+			new Exam05_EmployeeVO("7", "홍길동7", "IT", 7000, "male")
+		);
+	
+	private static List<String> myBuddy = Arrays.asList("홍길동", "강감찬", "신사임당", "이순신", "홍길동");
+	
+	private static List<String> flatBuddy = Arrays.asList("홍길동 20 서울", "강감찬 30 인천", "신사임당 50 부산", "이순신 45 수원");
+	
+	public static void main(String[] args) {
+		
+		// 1. myBuddy에서 동일한 이름을 삭제하고 친구이름을 출력하세요.
+		myBuddy.stream().distinct().forEach(System.out::println);
+		
+		// 2. employees에서 중복된 사원을 제거하고 사원명을 출력
+		employees.stream().distinct().forEach(t->System.out.println(t.getName()));
+		
+		// 3. flatmap 예제 - 스트림을 쪼갠다?
+		flatBuddy.stream().flatMap(t -> Arrays.stream(t.split(" "))).forEach(System.out::println);;
+		
+		// 4. 최고 연봉자가 누구?
+		System.out.println(employees.stream().distinct().mapToInt(Exam05_EmployeeVO::getSalary).max().getAsInt());
+		
+		// 5. 연봉 순으로 이름 출력 -> Exam05_EmployeeVO 에서 Comparable<T> 인터페이스 구현하면 쉽게 정렬할 수 있음
+		employees.stream().sorted(Comparator.reverseOrder()).forEach( e -> System.out.println(e.getName()));
+		
+		// 6. 연봉이 5000 이상인 사람의 이름을 출력하고 평균 연봉을 구하세요(반복 foreach() 은 최종처리임 peek()는 중간처리로서 반복됨
+		double avg = employees.stream().filter(t -> t.getSalary() >= 5000).peek(t->System.out.println(t.getName())).mapToInt(t->t.getSalary()).average().getAsDouble();
+		System.out.println(avg);
+		
+		// 7. IT부서에 근무하는 여성이 존재하면 그 여성 중 가장 연봉이 높은 여성의 이름
+		employees.stream().filter(t -> t.getDept().equals("IT"))
+						  .filter(t -> t.getGender().equals("female"))
+						  .sorted(Comparator.reverseOrder())
+						  .findFirst()
+						  .ifPresent(t -> System.out.println(t.getName()));
+		
+		// 8. Match 예제
+		
+	}
+	
+}

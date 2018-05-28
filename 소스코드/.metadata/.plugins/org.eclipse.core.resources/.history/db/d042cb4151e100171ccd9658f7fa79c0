@@ -1,0 +1,30 @@
+package nio;
+
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+public class Exam06_FileChannelWrite {
+	
+	public static void main(String[] args) {
+		
+		// 1. 어떤 파일에 write 할지 결정
+		Path path = Paths.get("asset/FileChannelWriteTest.txt");
+		
+		// 2. 해당 경로객체를 이용해서 File Channel을 open
+		try {
+			FileChannel fileChannel = FileChannel.open(path, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+			
+			//3. CharSet 필요
+			CharSet charSet = Charset.forName("UTF-8");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		
+		
+	}
+	
+}

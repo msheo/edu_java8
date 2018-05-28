@@ -1,0 +1,29 @@
+package starcraft;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import starcraft.terran.Marine;
+import starcraft.terran.Tank;
+import starcraft.terran.TerranInterface;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		// 마린 3마리 생성
+		// 탱크 2기 생성
+		List<TerranInterface> corps = new ArrayList<TerranInterface>();
+		corps.add(new Marine());
+		corps.add(new Marine());
+		corps.add(new Marine());
+		corps.add(new Tank());
+		corps.add(new Tank());
+		
+		
+		// 병력(5) 모두 move() 호출
+		// 병력(5) 모두 attack() 호출
+		
+	}
+
+}

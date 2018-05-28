@@ -1,0 +1,31 @@
+package nio;
+
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+// 프로세서 blocking은 하되 10개의 파일을 병렬적으로 비동기처리??
+public class Exam08_AsynchronousFileChannelWrite {
+
+	public static void main(String[] args) {
+		
+		// 현재 가용 Core 수를 알아보자.
+		int coreNum = Runtime.getRuntime().availableProcessors();
+		System.out.println(coreNum);
+		
+		// 1. Thread Pool부터 만들자. -> 스레드 필요할때 NEW 해서 만드는 것은 굉장히 지양해야함. Thread Pool 에서 꺼내서 쓸 것!
+		ExecutorService executorService = Executors.newFixedThreadPool(coreNum);
+		
+		for (int i = 0; i < 10; i++) {
+			// 2. 파일 경로를 생성
+			Path path = Paths.get("asset/file" + i + ".txt");
+			Charset charset = Charset.forName("UTF-8");
+		}
+		
+		
+		
+	}
+	
+}

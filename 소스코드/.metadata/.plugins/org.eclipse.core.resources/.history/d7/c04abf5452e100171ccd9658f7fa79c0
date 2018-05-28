@@ -1,0 +1,13 @@
+package nio;
+
+import java.nio.file.Paths;
+
+public class Exam07_FileChannelRead {
+
+	public static void main(String[] args) {
+		
+		// 1. Path 객체
+		Path path = Paths.get("asset/file.txt");
+	}
+	
+}

@@ -1,0 +1,9 @@
+package nio;
+
+public class Exam07_FileChannelRead {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}

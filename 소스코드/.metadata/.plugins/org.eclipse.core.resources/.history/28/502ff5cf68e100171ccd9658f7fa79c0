@@ -1,0 +1,14 @@
+package nio;
+
+public class Exam11_ClientSocketChannel {
+
+	public static void main(String[] args) {
+		
+		// 클라이언트는 시작하면
+		// 바로 서버에 네트워크 접속을 시도.
+		
+		
+		
+	}
+
+}

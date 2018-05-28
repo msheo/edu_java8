@@ -1,0 +1,9 @@
+package stream;
+
+public class Exam01_StreamKinds {
+
+	public static void main(String[] args) {
+
+	}
+
+}

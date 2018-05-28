@@ -1,0 +1,35 @@
+package simplebooksearch.service;
+
+import java.util.List;
+
+import simplebooksearch.dao.BookDao;
+import simplebooksearch.dao.LotteConnectionMaker4;
+import simplebooksearch.vo.BookEntity;
+
+// 로직을 처리하는 클래스(로직만 처리 -> transaction)
+public class BookService {
+
+	public List<BookEntity> selectBookByKeyword(String text) {
+		
+		// 키워드로 책을 검색하는 로직을 수행하면 되요!! ( 로직 : 더하고 빼고 곱하고 나누고 if while ...)
+		// 우리는 따로 로직 필요 없이 DB 처리하면 될듯
+		
+		// BookDao에 의존성이 있는 LotteConnectionMaker4 객체를 주입해요(Dependency Injection)
+		// DI 작업이 일어나요 -> Constructor Injection
+		// BookDao 코드에 만약에 new LotteConnectionMaker4() 가 있으면 커플링이 높아 -> 소스코드에서 필요할때 new 해서 생성하잖아..
+		// 근데 여기서 봐봐 지금 서비스에서 실행 시점에 LotteConnectionMaker4 만들고 bookdao에 생성자 인자로 넘겨서 의존성을 실행 시점에 주입시켜주잖아 이게 Dependency Injection이야
+		// 그리고 이렇게 클래스에 new 해서 만드는게 아니라 실행시점에 만들어서 클래스 
+		LotteConnectionMaker4 maker = new LotteConnectionMaker4();
+		BookDao dao = new BookDao(maker);
+		
+		return dao.select(text);
+	}
+
+	public boolean deleteBookByIsbn(String text) {
+
+		LotteConnectionMaker4 maker = new LotteConnectionMaker4();
+		BookDao dao = new BookDao(maker);
+		
+		return dao.delete(text);
+	}
+}	

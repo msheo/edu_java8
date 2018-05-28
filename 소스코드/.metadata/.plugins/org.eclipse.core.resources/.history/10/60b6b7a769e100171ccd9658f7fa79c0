@@ -1,0 +1,33 @@
+package nio;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.SocketChannel;
+
+public class Exam11_ClientSocketChannel {
+
+	public static void main(String[] args) {
+		
+		// 클라이언트는 시작하면
+		// 바로 서버에 네트워크 접속을 시도.
+		// SocketChannel 이용하여 서버에 접속
+		try {
+			SocketChannel client = SocketChannel.open();
+			client.configureBlocking(true);
+			client.connect(new InetSocketAddress("localhost", 5555));
+			System.out.println("서버접속 성공");
+			
+			ByteBuffer buffer = ByteBuffer.allocate(1000);
+			client.read(buffer);
+			int size = client.read(buffer);
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

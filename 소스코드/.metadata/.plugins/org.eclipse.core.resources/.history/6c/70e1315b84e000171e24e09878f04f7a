@@ -1,0 +1,9 @@
+package lambda;
+
+public class Exam04_LambdaUsingSupplierAPI {
+	
+	public static void main(String[] args) {
+			
+	}
+	
+}

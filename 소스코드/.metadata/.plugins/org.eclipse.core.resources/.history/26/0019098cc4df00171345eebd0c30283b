@@ -1,0 +1,5 @@
+package starcraft.terran;
+
+public interface HealerInterface {
+	public void heal();
+}

@@ -1,0 +1,7 @@
+package classloaderex;
+
+public class Exam03_URLClassLoaderExam {
+	public static void main(String[] args) {
+		
+	}
+}

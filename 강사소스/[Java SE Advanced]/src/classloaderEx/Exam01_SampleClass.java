@@ -1,0 +1,17 @@
+package classloaderEx;
+
+public class Exam01_SampleClass implements Runnable {
+
+	private String msg;
+	private int i;
+	
+	public Exam01_SampleClass(String msg,int i) {
+		this.msg = msg;
+		this.i = i;
+	}
+	
+	@Override
+	public void run() {
+		System.out.println(msg + " : " + i);
+	}
+}

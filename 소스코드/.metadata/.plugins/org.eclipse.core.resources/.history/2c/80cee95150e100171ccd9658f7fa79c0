@@ -1,0 +1,9 @@
+package nio;
+
+public class Exam06_FileChannelWrite {
+	
+	public static void main(String[] args) {
+		
+	}
+	
+}

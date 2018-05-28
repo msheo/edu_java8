@@ -1,0 +1,50 @@
+package nio;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousFileChannel;
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.EnumSet;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Exam08_AsynchronousFileChannelWrite {
+
+	public static void main(String[] args) {
+		
+		// 현재 가용 Core 수를 알아보자.
+		int coreNum = Runtime.getRuntime().availableProcessors();
+		System.out.println(coreNum);
+		
+		// 1. Thread Pool부터 만들자. -> 스레드 필요할때 NEW 해서 만드는 것은 굉장히 지양해야함. Thread Pool 에서 꺼내서 쓸 것!
+		ExecutorService executorService = Executors.newFixedThreadPool(coreNum);
+		
+		for (int i = 0; i < 10; i++) {
+			// 2. 파일 경로를 생성
+			Path path = Paths.get("asset/file" + i + ".txt");
+			Charset charset = Charset.forName("UTF-8");
+			
+			try {
+				AsynchronousFileChannel asyncFileChannel = 
+						AsynchronousFileChannel.open(path, EnumSet.of(StandardOpenOption.CREATE, StandardOpenOption.WRITE), executorService);
+				
+				ByteBuffer buffer = charset.encode("이것은 소리없는 아우성 : " + i);
+				
+				// 스레드풀로 돌리는데 마지막에 다 파일처리한 뒤에 filechannel.close() 해줘야 하는데 스레드라서 이게언제끝날지 모르자나.. 
+				// 동기통신에서는 위에서 기다렸다가 해서 close하면 되는데.. 쓰레드로인한 병렬처리는?? 어떻게하지??
+				Attachment attachment
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
+		
+	}
+	
+}

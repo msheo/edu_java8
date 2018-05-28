@@ -1,0 +1,39 @@
+package lambda;
+
+@FunctionalInterface
+interface Exam02_MyFunctionalInterface{
+	public void myInfo();
+}
+
+class OuterClass {
+	private int outerField = 100;
+	
+	class InnnerClass {
+		private int innerField = 200;
+		
+		public void innerMethod() {
+			int localVariable = 300;
+			
+			Exam02_MyFunctionalInterface fi = () -> {
+				System.out.println("localVariable : " + localVariable);
+			};
+			fi.myInfo();
+
+		}
+	
+	}
+	
+}
+
+public class Exam02_LambdaUsingVariable {
+
+	public static void main(String[] args) {
+		
+		OuterClass outerClass = new OuterClass();
+		
+		OuterClass.InnerClass innterClass = outerClass.new InnnerClass();
+		
+		
+	}
+	
+}

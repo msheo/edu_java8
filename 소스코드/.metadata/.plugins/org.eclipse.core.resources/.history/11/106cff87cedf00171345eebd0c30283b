@@ -1,0 +1,14 @@
+package classloaderex;
+
+public class Exam01_ClassDynamicLoading {
+	
+	public static void main(String[] args) {
+		
+		// 인자를 하나 받아들여서 실행할 것
+		// 인자를 특정 클래스 파일에 대한 이름을 받을 것.
+		if(args.length < 1) {
+			System.out.println("인자가 필요해요");
+			System.exit(1); 	// 강제 종료
+		}
+	}
+}

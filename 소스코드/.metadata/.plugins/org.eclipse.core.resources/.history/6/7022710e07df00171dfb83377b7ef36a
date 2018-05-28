@@ -1,0 +1,5 @@
+package simplebooksearch.service;
+
+public class BookService {
+
+}

@@ -1,0 +1,10 @@
+package classloaderex;
+
+public class Exam01_ClassDynamicLoading {
+	
+	public static void main(String[] args) {
+		
+		// 인자를 하나 받아들여서 실행할 것
+		// 인자를 특정 클래스 파일에 대한 이름을 받을 것.
+	}
+}

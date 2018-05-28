@@ -1,0 +1,9 @@
+package lambda;
+
+public class Exam06_LambdaUsingPredicateAPI {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

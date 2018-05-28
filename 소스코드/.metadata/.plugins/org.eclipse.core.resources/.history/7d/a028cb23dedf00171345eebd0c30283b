@@ -1,0 +1,32 @@
+package lambda;
+
+/*class MyRunnable implements Runnable{
+	
+	@Override
+	public void run() {
+		System.out.println("쓰레드가 동작해요");
+	}
+}
+*/
+public class LambdaBasic {
+	
+	public static void main(String[] args) {
+		
+		// Runnable interface를 구현한 객체를 만들어서 Thread를 동작시킬 것
+		// Runnable runnable = new MyRunnable();
+		// new Thread(runnable).start();
+		
+		// 익명 함수
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				
+			}
+		}).start();
+		
+		
+	}
+	
+}

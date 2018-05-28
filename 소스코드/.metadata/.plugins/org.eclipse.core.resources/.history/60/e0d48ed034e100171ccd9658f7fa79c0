@@ -1,0 +1,28 @@
+package nio;
+
+import javafx.application.Application;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+public class Exam03_WatchService extends Application{
+
+	private TextArea textArea;
+	
+	
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// 화면 layout 구성
+		BorderPane root = new BorderPane();
+		root.setPrefSize(700, 500);
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		launch();	
+	}
+
+}

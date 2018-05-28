@@ -1,0 +1,11 @@
+package starcraft;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// 마린 3마리, 탱크2기 생성
+		// 병력(5) 모두 move() 호출
+		// 병력(5) 모두 attack() 호출
+	}
+
+}

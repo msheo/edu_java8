@@ -1,0 +1,25 @@
+package oop.basic;
+
+//superclass, upper class, parent class
+class SuperClass{
+	
+}
+
+//subclass, child class
+class SubClass extends SuperClass{
+	
+}
+
+public class Exam02_ISARelationShip {
+
+	public static void main(String[] args) {
+		
+		// is-a relationship -> subclass is a super class
+		SuperClass a = new SuperClass();
+		SubClass b = new SubClass();
+		
+		
+		
+	}
+
+}

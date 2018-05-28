@@ -1,0 +1,12 @@
+package oop.basic;
+
+public class Exam02_ISARelationShip {
+
+	public static void main(String[] args) {
+		
+		System.out.println("GG");
+		
+		
+	}
+
+}

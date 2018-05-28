@@ -1,0 +1,27 @@
+package nio;
+
+import java.nio.channels.FileChannel;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Exam09_AsynchronousFileChannelRead {
+
+	public static void main(String[] args) {
+		
+		int coreNum = Runtime.getRuntime().availableProcessors();
+		ExecutorService executorService = Executors.newFixedThreadPool(coreNum);
+		
+		for(int i = 0 ; i < 10 ; i ++) {
+			Path path = Paths.get("asset/file" + i + ".txt");
+			
+			
+			
+			FileChannel.open(path, options);
+			
+		}
+		
+	}
+	
+}

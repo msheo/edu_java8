@@ -1,0 +1,11 @@
+package starcraft.terran;
+
+public class Marine implements TerranInterface{
+	public void move() {
+		
+	}
+	
+	public void attack() {
+		
+	}
+}

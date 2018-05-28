@@ -1,0 +1,16 @@
+package starcraft.terran;
+
+public class HealerAdapter implements TerranInterface {
+
+	@Override
+	public void move() {
+		
+	}
+
+	@Override
+	public void attack() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

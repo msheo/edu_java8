@@ -1,0 +1,22 @@
+package nio;
+
+import java.nio.ByteBuffer;
+
+public class Exam04_ByteBufferCreate {
+
+	public static void main(String[] args) {
+		
+		int capacity = 5*1024*1024;		// 5MB 버퍼 크기
+		
+		long start, end; 	// non-direct vs direct 속도 비교를 위한 시작/끝 시간
+		
+		start = System.nanoTime();
+		
+		// ByteBuffer를 생성하자. (non-direct방식: JVM Heap에 버퍼생성)
+		ByteBuffer 
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package lambda;
+
+public class Exam05_EmployeeVO {
+
+	private String id;
+	private String name;
+	private String dept;
+	private int salary;
+	private String gender;
+	
+}

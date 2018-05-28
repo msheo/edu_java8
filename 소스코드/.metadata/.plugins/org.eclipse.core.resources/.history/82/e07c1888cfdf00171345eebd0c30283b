@@ -1,0 +1,8 @@
+package classloaderex;
+
+public class Exam01_SampleClass implements Runnable{
+	public void run() {
+		
+	}
+
+}

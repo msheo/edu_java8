@@ -1,0 +1,6 @@
+package simplebooksearch.vo;
+
+public class BookEntity {
+
+	private 
+}

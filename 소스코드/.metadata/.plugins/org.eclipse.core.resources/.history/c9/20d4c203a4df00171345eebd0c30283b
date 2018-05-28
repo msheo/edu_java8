@@ -1,0 +1,8 @@
+package simplebooksearch.dao;
+
+public class ConnectionMaker {
+	
+	public Connection getConnection() {
+		
+	}
+}

@@ -1,0 +1,19 @@
+package nio;
+
+import java.nio.channels.FileChannel;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+public class Exam07_FileChannelRead {
+
+	public static void main(String[] args) {
+		
+		// 1. Path 객체
+		Path path = Paths.get("asset/FileChannelWriteAndRead.txt");
+		
+		// 2. FileChannel Open
+		Filechannel fileChannel = FileChannel.open(path, StandardOpenOption.READ);
+	}
+	
+}

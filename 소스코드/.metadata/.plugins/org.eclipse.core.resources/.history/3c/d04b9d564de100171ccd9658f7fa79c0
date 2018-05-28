@@ -1,0 +1,12 @@
+package nio;
+
+public class Exam05_ByteBufferStringConversion {
+
+	public static void main(String[] args) {
+		
+		// 문자열을 ByteBuffer로 변환
+		
+		String data = "이것은 소리없는 아우성";
+	}
+	
+}

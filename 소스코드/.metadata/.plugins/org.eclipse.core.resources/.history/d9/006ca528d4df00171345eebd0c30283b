@@ -1,0 +1,9 @@
+package classloaderex;
+
+public class Exam02_ClassLoadingEx {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,49 @@
+package oop.basic;
+
+public class Exam01_InheritanceOrder extends SuperClass{
+	
+	int c = staticCall("6번 문장");
+	static int d = staticCall("7번 문장");
+	
+	public Exam01_InheritanceOrder() {
+		super(100);
+		//staticCall("8번 문장");
+		super.myFunc();
+	}
+	
+	public void myFunc() {
+		System.out.println("9번 문장");
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("10번 문장");
+		staticCall("gg");
+		SuperClass obj = new Exam01_InheritanceOrder();
+		obj.myFunc();
+	}
+
+}
+
+class SuperClass{
+	
+	static int staticCall(String msg) {
+		System.out.println(msg);
+		return 0;
+	}
+	
+	int a = staticCall("1번문장");
+	static int b = staticCall("2번 문장");
+	
+	public SuperClass() {
+		staticCall("3번 문장");
+	}
+	
+	public SuperClass(int i) {
+		this();
+		staticCall("4번 문장");
+	}
+	
+	public void myFunc() {
+		System.out.println("5번 문장");
+	}
+}

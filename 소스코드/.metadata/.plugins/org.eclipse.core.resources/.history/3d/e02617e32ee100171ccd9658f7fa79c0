@@ -1,0 +1,9 @@
+package nio;
+
+public class Exam01_PathInterface {
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,28 @@
+package classloaderEx;
+
+public class Exam01_ClassDynamicLoading {
+
+	public static void main(String[] args) {
+		
+		// 인자를 하나 받아들여서 실행할꺼예요.
+		// 인자로 특정 클래스 파일에 대한 이름을 받을꺼예요.
+		if( args.length < 1) {
+			System.out.println("인자가 필요해요!!");
+			System.exit(1);  // 강제종료!
+		}
+		try {		
+			Class<?> newClass = Class.forName(args[0]);
+			Object obj = newClass.getDeclaredConstructor(String.class,int.class)
+					             .newInstance("소리없는 아우성!",100);
+			
+			new Thread((Runnable)obj).start();
+			
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

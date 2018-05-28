@@ -1,0 +1,24 @@
+package stream;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Exam01_StreamKinds {
+
+	private static List<String> myBuddy = Arrays.asList("홍길동", "강감찬", "신사임당", "이순신");
+	private static int[] intArr = {10, 20, 30, 40, 50};
+	
+	public static void main(String[] args) {
+		
+		// 1. List로부터 모든 사람의 이름을 출력하세요
+		myBuddy.stream().forEach(System.out::println); 
+		
+		// 2. 배열로부터 스트림을 확보해서 배열안에 있는 모든 숫자의 평균을 구해보아요!
+		System.out.println("배열 내부의 숫자 평균 : " + Arrays.stream(intArr).average().getAsDouble());
+		
+		
+		
+		
+	}
+
+}

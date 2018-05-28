@@ -1,0 +1,65 @@
+package lambda;
+
+public class Exam05_EmployeeVO implements Comparable<Exam05_EmployeeVO>{
+
+	private String id;
+	private String name;
+	private String dept;
+	private int salary;
+	private String gender;
+	
+	// 명시적 기본 생성자
+	public Exam05_EmployeeVO(){
+		
+	}
+	
+	public Exam05_EmployeeVO(String id, String name, String dept, int salary, String gender) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dept = dept;
+		this.salary = salary;
+		this.gender = gender;
+	}
+
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	@Override
+	public int compareTo(Exam05_EmployeeVO o) {
+		
+		// x는 현재 객체
+		// y는 파라미터로 들어온 객체
+		// Integer.compare는 x,y를 비교 후 x>y 면 양수 같으면 0 x<y 면 음수
+		return Integer.compare(this.getSalary(), o.getSalary());
+	}
+	
+}

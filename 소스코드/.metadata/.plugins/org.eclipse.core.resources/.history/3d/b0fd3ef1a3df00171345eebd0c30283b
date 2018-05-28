@@ -1,0 +1,5 @@
+package simplebooksearch.dao;
+
+public class ConnectionMaker {
+
+}

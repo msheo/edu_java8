@@ -1,0 +1,9 @@
+package lambda;
+
+public class LambdaBasic {
+	
+	public static void main(String[] args) {
+		
+	}
+	
+}

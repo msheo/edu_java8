@@ -1,0 +1,14 @@
+package lambda;
+
+interface MyInterface {
+	// 추상메소드가 2개 이상 나오면 안된다.
+	public void myFunc();
+}
+
+public class LambdaBasic2 {
+	
+	public static void main(String[] args) {
+		
+	
+	}
+}

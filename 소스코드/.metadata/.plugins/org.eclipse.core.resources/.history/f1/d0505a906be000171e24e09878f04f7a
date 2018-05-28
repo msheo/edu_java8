@@ -1,0 +1,14 @@
+package lambda;
+
+@FunctionalInterface
+interface Exam02_MyFunctionalInterface{
+	public void method();
+}
+
+public class Exam02_LambdaUsingVariable {
+
+	public static void main(String[] args) {
+		
+	}
+	
+}

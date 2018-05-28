@@ -1,0 +1,12 @@
+package oop.basic;
+
+class sum{
+	public static int sum(int a, int b) {
+		return a+b;
+	}
+}
+
+public class test {
+	int a=3, b=4;
+	System.out.println(sum.sum(a,b));
+}

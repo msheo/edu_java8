@@ -1,0 +1,26 @@
+package nio;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.nio.channels.SocketChannel;
+
+public class Exam11_ClientSocketChannel {
+
+	public static void main(String[] args) {
+		
+		// 클라이언트는 시작하면
+		// 바로 서버에 네트워크 접속을 시도.
+		// SocketChannel 이용하여 서버에 접속
+		try {
+			SocketChannel client = SocketChannel.open();
+			client.configureBlocking(true);
+			client.connect(new InetAddress("localhost", 5555));
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

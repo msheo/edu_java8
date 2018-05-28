@@ -1,0 +1,17 @@
+package classloaderex;
+
+import java.net.URL;
+
+public class Exam03_URLClassLoaderExam {
+	
+	public static void main(String[] args) {
+
+		URL[] url = {
+			"http://atglab.synology.me:7070/bookSearch/";	
+			"http://www.naver.com/"
+		};
+		
+		
+	}
+	
+}

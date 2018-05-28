@@ -1,0 +1,10 @@
+package oop.basic;
+
+public class Exam02_ISARelationShip {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

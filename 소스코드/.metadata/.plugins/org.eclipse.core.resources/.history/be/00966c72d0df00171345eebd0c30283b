@@ -1,0 +1,10 @@
+package classloaderex;
+
+public class Exam01_SampleClass implements Runnable{
+	
+	@Override
+	public void run() {
+		System.out.println("출력되요!!");
+	}
+
+}

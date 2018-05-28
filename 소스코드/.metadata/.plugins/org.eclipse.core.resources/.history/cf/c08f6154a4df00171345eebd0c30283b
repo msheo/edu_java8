@@ -1,0 +1,27 @@
+package simplebooksearch.service;
+
+import java.util.List;
+
+import simplebooksearch.dao.BookDao;
+import simplebooksearch.vo.BookEntity;
+
+// 로직을 처리하는 클래스(로직만 처리 -> transaction)
+public class BookService {
+
+	public List<BookEntity> selectBookByKeyword(String text) {
+		
+		// 키워드로 책을 검색하는 로직을 수행하면 되요!! ( 로직 : 더하고 빼고 곱하고 나누고 if while ...)
+		// 우리는 따로 로직 필요 없이 DB 처리하면 될듯
+		
+		BookDao dao = new BookDAO();
+		
+		return dao.select(text);
+	}
+
+	public boolean deleteBookByIsbn(String text) {
+
+		BookDao dao = new BookDAO();
+		
+		return dao.delete(text);
+	}
+}	

@@ -1,0 +1,14 @@
+package simplebooksearch.service;
+
+import java.util.List;
+
+import simplebooksearch.vo.BookEntity;
+
+public class BookService {
+
+	public List<BookEntity> selectBookByKeyword(String text) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,13 @@
+package nio;
+
+// 프로세서 blocking은 하되 10개의 파일을 병렬적으로 비동기처리??
+public class Exam08_AsynchronousFileChannelWrite {
+
+	public static void main(String[] args) {
+		
+		// 현재 가용 Core 수를 알아보자.
+		int coreNum = Runtime.getRuntime().availableProcessors();
+		
+	}
+	
+}

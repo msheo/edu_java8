@@ -1,0 +1,14 @@
+package starcraft.terran;
+
+public class Tank implements TerranInterface{
+	
+	@Override
+	public void move() {
+		
+	}
+	
+	@Override
+	public void attack() {
+		
+	}
+}

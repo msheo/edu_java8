@@ -1,0 +1,12 @@
+package nio;
+
+import javafx.application.Application;
+
+public class Exam03_WatchService extends Application{
+
+	public static void main(String[] args) {
+		
+		launch();	
+	}
+
+}

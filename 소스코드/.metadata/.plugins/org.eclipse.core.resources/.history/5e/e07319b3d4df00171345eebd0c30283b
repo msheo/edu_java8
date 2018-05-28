@@ -1,0 +1,15 @@
+package classloaderex;
+
+public class Exam02_ClassLoadingEx {
+
+	public static void main(String[] args) {
+		
+		// 01번의 Class.forname 은 static method인데 Class 라는 클래스의 stattic method 안에 classloader가 구현되어 있음
+		// 지금 예제는 classloader를 자체적으로 만들어보자
+		// ClassLoader class는 추상 클래스다
+		ClassLoader cl = new ClassLoader() {
+		};
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+package classloaderex;
+
+public class Exam01_ClassDynamicLoading {
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,13 @@
+package nio;
+
+public class Exam04_ByteBufferCreate {
+
+	public static void main(String[] args) {
+		
+		int capacity = 5*1024*1024;		// 5MB 버퍼 크기
+		
+		long start, end;
+		
+	}
+
+}
